@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import FadeInSection from "./ScrollAos";
 
 export default function Header() {
   const [visibleLines, setVisibleLines] = useState<number[]>([]);
@@ -110,21 +111,23 @@ export default function Header() {
               )}
             </div>
           </div>
-          <div className="m-10 text-center">
-            <h1 className="inter-title text-4xl md:text-6xl w-full">
-              Hey, soy <span className="text-indigo-500">Agustín!</span>
-            </h1>
-            <div className="flex flex-col md:flex-row justify-center mt-6 items-center">
-              <p className="inter-subtitle span bg-white text-indigo-600 text-lg sm:text-2xl rounded-xl py-1 px-3 m-3 font-black animate-slide-up">
-                Frontend y Backend Developer{" "}
-              </p>
-              <a href="/CV.pdf" target="_blank" className="font-bold text-2xl">
-                <div className="text-center rounded-3xl relative w-24 h-9 bg-indigo-500 animate-slide-up cursor-pointer">
-                  CV
-                </div>
-              </a>
+          <FadeInSection animationType="slide-in-left">
+            <div className="m-10 text-center">
+              <h1 className="inter-title text-3xl lg:text-5xl md:text-4xl w-full">
+                Hey, soy <span className="text-indigo-500">Agustín!</span>
+              </h1>
+              <div className="flex flex-col md:flex-row justify-center mt-6 items-center">
+                <p className="inter-subtitle span bg-white text-indigo-600 text-md sm:text-xl rounded-xl py-1 px-3 m-3 font-black animate-slide-up">
+                  Frontend y Backend Developer{" "}
+                </p>
+                <a href="/CV.pdf" target="_blank" className="font-bold text-xl">
+                  <div className="text-center rounded-3xl relative w-20 h-8 bg-indigo-500 animate-slide-up cursor-pointer">
+                    CV
+                  </div>
+                </a>
+              </div>
             </div>
-          </div>
+          </FadeInSection>
           <div className="lines-decor flex flex-col items-center w-full md:items-start">
             {/* Fila 6 */}
             <div className="line-container flex flex-col items-center md:flex-row md:items-start">
