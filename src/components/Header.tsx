@@ -118,7 +118,7 @@ const Header = () => {
                 Hey, soy <span className="text-indigo-500">Agustín!</span>
               </h1>
               <div className="flex flex-col md:flex-row justify-center mt-6 items-center">
-                <p className="inter-subtitle span bg-white text-indigo-600 text-md sm:text-xl rounded-xl py-1 px-3 m-3 font-black animate-slide-up">
+                <p className="inter-subtitle span bg-white text-indigo-600 text-md sm:text-xl rounded-xl py-1 px-3 m-3 animate-slide-up font-bold">
                   Frontend y Backend Developer{" "}
                 </p>
                 <a href="/CV.pdf" target="_blank" className="relative group">
