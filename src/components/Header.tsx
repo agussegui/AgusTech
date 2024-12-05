@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import FadeInSection from "./ScrollAos";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faDownload } from "@fortawesome/free-solid-svg-icons";
+import { ArrowDownFromLine } from "lucide-react";
 
 const Header = () => {
   const [visibleLines, setVisibleLines] = useState<number[]>([]);
@@ -129,7 +128,7 @@ const Header = () => {
                     <span className="text-xl font-bold text-white transition-all duration-300 group-hover:opacity-0 group-hover:translate-y-[-50%]">
                       CV
                     </span>
-                    <FontAwesomeIcon icon={faDownload} className="w-5 h-5 absolute opacity-0 translate-y-[50%] transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0"/>
+                    <ArrowDownFromLine className="w-5 h-5 absolute opacity-0 translate-y-[50%] transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0"/>
                     {/* Ícono de descarga, aparece al hacer hover */}
                   </div>
                 </a>
