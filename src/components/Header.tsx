@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import FadeInSection from "./ScrollAos";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
 
-export default function Header() {
+const Header = () => {
   const [visibleLines, setVisibleLines] = useState<number[]>([]);
 
   useEffect(() => {
@@ -124,12 +124,12 @@ export default function Header() {
                 </p>
                 <a href="/CV.pdf" target="_blank" className="relative group">
                   {/* Contenedor del botón */}
-                  <div className="flex items-center justify-center text-center rounded-3xl relative w-20 h-8 bg-indigo-500 cursor-pointer overflow-hidden">
+                  <div className="flex items-center justify-center text-center rounded-3xl relative w-20 h-8 bg-indigo-500 cursor-pointer overflow-hidden hover:bg-[#121212] hover:border-indigo-500 hover:border-2">
                     {/* Texto "CV", desaparece al hacer hover */}
                     <span className="text-xl font-bold text-white transition-all duration-300 group-hover:opacity-0 group-hover:translate-y-[-50%]">
                       CV
                     </span>
-                    <FontAwesomeIcon icon={faDownload} className="w-6 h-6 absolute opacity-0 translate-y-[50%] transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0"/>
+                    <FontAwesomeIcon icon={faDownload} className="w-5 h-5 absolute opacity-0 translate-y-[50%] transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0"/>
                     {/* Ícono de descarga, aparece al hacer hover */}
                   </div>
                 </a>
@@ -214,3 +214,5 @@ export default function Header() {
     </>
   );
 }
+
+export default React.memo(Header);

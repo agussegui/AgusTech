@@ -50,8 +50,8 @@ export const projects: Project[] = [
     subtitle: "Inspirate y pinta lo que vos quieras | Paint",
     technologies: [
       { name: "Next.js", logo: "./next-js.svg", bgColor: "bg-slate-500" },
-      { name: "Tailwind", logo: "./tailwind.svg", bgColor: "bg-sky-800" },
       { name: "TypeScript", logo: "./typescript.svg", bgColor: "bg-blue-950" },
+      { name: "Tailwind", logo: "./tailwind.svg", bgColor: "bg-sky-800" },
       { name: "React", logo: "./react-2.svg", bgColor: "bg-blue-950" },
     ],
     githubLink: "https://github.com/agussegui/PaintNote-",
@@ -87,6 +87,19 @@ export const projects: Project[] = [
     ],
     githubLink: "https://github.com/agussegui/Ecommerce-Store",
     demoLink: "https://github.com/agussegui/Ecommerce-Store",
+  },
+  {
+    title: "Planificador",
+    image: "../organizador.png",
+    subtitle: "Planicifica tus Gastos | Expense-Planner",
+    technologies: [
+      { name: "JavaScript", logo: "./javascript.svg", bgColor: "bg-yellow-700" },
+      { name: "CSS", logo: "./css.svg", bgColor: "bg-blue-800" },
+      { name: "React", logo: "./react-2.svg", bgColor: "bg-blue-950" },
+      
+    ],
+    githubLink: "https://github.com/agussegui/Ecommerce-Store",
+    demoLink: "https://expense-beta-khaki.vercel.app/",
   },
   
 ];
