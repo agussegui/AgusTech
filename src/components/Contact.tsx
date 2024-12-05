@@ -2,8 +2,7 @@ import { useRef, useState } from "react";
 import emailjs from "emailjs-com";
 import { toast } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"; 
-import { faPaperPlane } from "@fortawesome/free-solid-svg-icons/faPaperPlane";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Send } from "lucide-react";
 
 
 export default function Contact() {
@@ -82,10 +81,7 @@ export default function Contact() {
     return (
         <div className="my-28 scroll-m-5 w-full mx-auto lg:max-w-4xl md:max-w-2xl">
             <div className="flex justify-start items-center mb-8 p-4">
-                <FontAwesomeIcon
-                    icon={faPaperPlane}
-                    className="w-10 h-10 text-white"
-                />
+                <Send className="size-12" />
                 <h2 className="text-4xl ml-5 text-indigo-500 font-bold text-center">Contáctame</h2>
             </div>
             

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid"; // Importamos los íconos
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,70 +33,71 @@ export default function Navbar() {
     };
 
     requestAnimationFrame(animation);
+  };
 
-  }  
   return (
     <>
-      <nav className="flex justify-between items-start md:justify-center md:items-center p-8 text-white mb-10 bg-black md:bg-opacity-0 bg-opacity-50 md:bg-none">
-        {/* UL alineado a la izquierda */}
-        <ul
-          className={`flex-col sm:flex-row sm:flex gap-5 md:justify-start md:items-start ${
-            isOpen ? "flex" : "hidden"
-          } sm:block`}
-        >
-          <li>
-            <button 
-              onClick={() => smoothScroll("home", 1000)}
-              className="text-xl hover:bg-gray-800 hover:text-indigo-400 font-bold p-3 rounded-full transition-all duration-200 ease-in-out " 
+        <nav className="flex justify-between md:justify-center md:items-center p-8 text-white mb-10">
+          {/* UL alineado a la izquierda */}
+            <ul
+              className={`flex-col sm:flex-row sm:flex gap-5 ${
+                isOpen ? "flex" : "hidden"
+              } sm:block`}
             >
-              Inicio
-            </button>
-          </li>
-          <li>
-            <button 
-              onClick={() => smoothScroll("about", 1000)}
-              className="text-xl hover:bg-gray-800 hover:text-indigo-400 font-bold p-3 rounded-full transition-all duration-200 ease-in-out " // Cambiar color para el       segundo botón
-            >
-              Sobre Mi
-            </button>
-          </li>
-          <li>
-            <button 
-              onClick={() => smoothScroll("projects", 1000)}
-              className="text-xl hover:bg-gray-800 hover:text-indigo-400 font-bold p-3 rounded-full transition-all duration-200 ease-in-out " // Cambiar color para el      tercer botón
-            >
-              Proyectos
-            </button>
-          </li>
-          <li>
-            <button 
-              onClick={() => smoothScroll("skills", 1000)}
-              className="text-xl hover:bg-gray-800 hover:text-indigo-400 font-bold p-3 rounded-full transition-all duration-200 ease-in-out " // Cambiar color para el       cuarto botón
-            >
-              Skills
-            </button>
-          </li>
-          <li>
-            <button 
-              onClick={() => smoothScroll("contact", 1000)}
-              className="text-xl hover:bg-gray-800 hover:text-indigo-400 font-bold p-3 rounded-full transition-all duration-200 ease-in-out " // Cambiar color para el       quinto botón
-            >
-              Contacto
-            </button>
-          </li>
-        </ul>
-        
-        {/* Botón hamburguesa a la derecha en móviles */}
-        <div
-          className="sm:hidden flex flex-col cursor-pointer justify-end"
-          onClick={toggleMenu}
-        >
-          <span className="bg-white w-6 h-1 mb-1"></span>
-          <span className="bg-white w-6 h-1 mb-1"></span>
-          <span className="bg-white w-6 h-1"></span>
-        </div>
-      </nav>
-
+              <li>
+                <button
+                  onClick={() => smoothScroll("home", 1000)}
+                  className="text-xl  hover:text-indigo-500 font-bold p-3 rounded-full transition-all  duration-200 ease-in-out "
+                >
+                  Inicio
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => smoothScroll("about", 1000)}
+                  className="text-xl  hover:text-indigo-500 font-bold p-3 rounded-full transition-all duration-200 ease-in-out "
+                >
+                  Sobre Mi
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => smoothScroll("projects", 1000)}
+                  className="text-xl  hover:text-indigo-500 font-bold p-3 rounded-full transition-all duration-200 ease-in-out "
+                >
+                  Proyectos
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => smoothScroll("skills", 1000)}
+                  className="text-xl  hover:text-indigo-500 font-bold p-3 rounded-full transition-all duration-200 ease-in-out "
+                >
+                  Skills
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => smoothScroll("contact", 1000)}
+                  className="text-xl  hover:text-indigo-500 font-bold p-3 rounded-full transition-all duration-200 ease-in-out "
+                >
+                  Contacto
+                </button>
+              </li>
+            </ul>
+          {/* Botón hamburguesa / "X" con iconos de Heroicons */}
+          <button
+            className="sm:hidden flex items-center justify-center relative w-8 h-8"
+            onClick={toggleMenu}
+          >
+            {/* Ícono de hamburguesa o "X" */}
+            {isOpen ? (
+              <XMarkIcon className="w-10 h-10 text-white transition-colors duration-300 absolute" />
+            ) : (
+              <Bars3Icon className="w-10 h-10 text-white transition-colors duration-300 absolute" />
+            )}
+          </button>
+        </nav>
     </>
   );
 }

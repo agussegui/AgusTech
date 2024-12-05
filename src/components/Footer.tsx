@@ -14,7 +14,7 @@ export default function Footer() {
                         <a href="mailto:agussegui24@hotmail.es" className="hover:underline me-4 md:me-6 cursor-pointer">Contacto</a>
                     </li>
                     <li>
-                        <a href="https://www.linkedin.com/in/agustin-segui/" className="hover:underline me-4 md:me-6 cursor-pointer">Linkedin</a>                    
+                        <a href="https://www.linkedin.com/in/agustin-segui/" className="hover:underline me-4 md:me-6 cursor-pointer" target="_blank">Linkedin</a>                    
                     </li>
                 </ul>
             </div>
