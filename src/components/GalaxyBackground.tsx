@@ -14,16 +14,20 @@ const GalaxyBackground: React.FC = () => {
   useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas?.getContext('2d');
-
+  
     if (!canvas || !ctx) return;
-
+  
     const resizeCanvas = () => {
-      const width = canvas.width = window.innerWidth;
-      const height = canvas.height = document.documentElement.scrollHeight;
-
-      // Crear estrellas iniciales
+      const width = (canvas.width = window.innerWidth);
+      const height = (canvas.height = Math.max(
+        document.documentElement.scrollHeight,
+        document.documentElement.offsetHeight,
+        document.body.scrollHeight,
+        document.body.offsetHeight
+      ));
+  
       stars.length = 0; // Limpiar las estrellas anteriores
-      for (let i = 0; i < 350; i++) {
+      for (let i = 0; i < 250; i++) {
         stars.push({
           x: Math.random() * width,
           y: Math.random() * height,
@@ -32,15 +36,18 @@ const GalaxyBackground: React.FC = () => {
         });
       }
     };
-
-    // Llamar a resizeCanvas para inicializar
+  
     resizeCanvas();
-
+  
+    // Recalcular tamaño al finalizar la carga completa de la página
+    window.addEventListener('load', resizeCanvas);
+    window.addEventListener('resize', resizeCanvas);
+  
     // Animar estrellas
     const animate = () => {
       const width = canvas.width;
       const height = canvas.height;
-
+  
       ctx.clearRect(0, 0, width, height);
       stars.forEach(star => {
         // Dibujar cada estrella
@@ -48,27 +55,25 @@ const GalaxyBackground: React.FC = () => {
         ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
         ctx.fillStyle = 'white';
         ctx.fill();
-
+  
         // Mover estrella
         star.y += star.speed;
-
+  
         // Si la estrella sale de la pantalla, reaparece en la parte superior
         if (star.y > height) {
           star.y = 0;
           star.x = Math.random() * width;
         }
       });
-
+  
       requestAnimationFrame(animate);
     };
-
+  
     animate();
-
-    // Ajustar el tamaño del canvas al cambiar el tamaño de la ventana
-    window.addEventListener('resize', resizeCanvas);
-
+  
     return () => {
       window.removeEventListener('resize', resizeCanvas);
+      window.removeEventListener('load', resizeCanvas);
     };
   }, []);
 
