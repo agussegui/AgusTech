@@ -30,12 +30,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, image, technologies, g
     <FadeInSection animationType="fade-in">
       <article className="flex flex-col space-x-0 space-y-8 group">
         <div className="w-full relative">
-          <div className="relative flex flex-col items-center gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-3xl group-hover:-translate-y-1 group-hover:shadow-2xl hover:border-gray-800">
+          <div className="relative flex flex-col items-center gap-6 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-3xl group-hover:-translate-y-1 group-hover:shadow-2xl hover:border-gray-800">
               <a href={demoLink} target="_blank" rel="noopener noreferrer" className="relative bg-space rounded-2xl p-6 transition duration-500 group-hover:scale-105 hover:border-gray-800">
                 <img
                   src={image}
                   alt={title}
-                  className=" object-cover object-top transition duration-500 group-hover:scale-105 rounded-lg w-full h-48"
+                  className="rounded-xl shadow-md hover:shadow-lg shadow-neutral-500 dark:shadow-black hover:shadow-neutral-500 dark:hover:shadow-black transition-all cursor-none"
                 />
               </a>
           </div>

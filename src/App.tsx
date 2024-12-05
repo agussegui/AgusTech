@@ -19,7 +19,7 @@ const App: React.FC = () => {
         <Navbar/>
         <div className="center-column relative z-1 text-white w-full">
           <section id="home" className="w-full">
-            <Header />
+            <Header/>
           </section>
           <section id="about" className="w-full">
             <WhoAmI />
@@ -33,7 +33,6 @@ const App: React.FC = () => {
           <section id="contact" className="w-full">
             <Contact />
           </section>
-          
         </div>
         <Footer/>
       </div>
