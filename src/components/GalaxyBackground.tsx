@@ -18,7 +18,7 @@ const GalaxyBackground: React.FC = () => {
     if (!canvas || !ctx) return;
   
     const resizeCanvas = () => {
-      const width = (canvas.width = window.innerWidth);
+      const width = (canvas.width = window.innerWidth -40);
       const height = (canvas.height = Math.max(
         document.documentElement.scrollHeight,
         document.documentElement.offsetHeight,
