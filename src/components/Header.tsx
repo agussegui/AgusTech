@@ -121,7 +121,7 @@ const Header = () => {
                 <p className="inter-subtitle span bg-white text-indigo-600 text-md sm:text-xl rounded-xl py-1 px-3 m-3 animate-slide-up font-bold">
                   Frontend y Backend Developer{" "}
                 </p>
-                <a href="/CV.pdf" target="_blank" className="relative group">
+                <a href="/CV-AgustinSegui.pdf" target="_blank" className="relative group">
                   {/* Contenedor del botón */}
                   <div className="flex items-center justify-center text-center rounded-3xl relative w-20 h-8 bg-indigo-500 cursor-pointer overflow-hidden hover:bg-[#121212] hover:border-indigo-500 hover:border-2">
                     {/* Texto "CV", desaparece al hacer hover */}
