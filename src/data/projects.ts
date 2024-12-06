@@ -55,7 +55,7 @@ export const projects: Project[] = [
       { name: "React", logo: "./react-2.svg", bgColor: "bg-blue-950" },
     ],
     githubLink: "https://github.com/agussegui/PaintNote-",
-    demoLink: "https://paintnote.vercel.app/",
+    demoLink: "https://paint-note.vercel.app/",
   },
   {
     title: "Agencia de Viajes",
@@ -99,7 +99,7 @@ export const projects: Project[] = [
       
     ],
     githubLink: "https://github.com/agussegui/Ecommerce-Store",
-    demoLink: "https://expense-beta-khaki.vercel.app/",
+    demoLink: "https://expense-planner-one.vercel.app/",
   },
   
 ];
