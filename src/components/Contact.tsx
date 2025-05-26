@@ -2,8 +2,7 @@ import { useRef, useState } from "react";
 import emailjs from "emailjs-com";
 import { toast } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"; 
-import { Send } from "lucide-react";
-
+import { Mail, MessageSquare, Send, User } from "lucide-react";
 
 export default function Contact() {
     const formRef = useRef<HTMLFormElement | null>(null); // Inicializa la referencia
@@ -79,56 +78,83 @@ export default function Contact() {
     };
 
     return (
-        <div className="my-28 scroll-m-5 w-full mx-auto lg:max-w-4xl md:max-w-2xl">
-            <div className="flex justify-start items-center mb-8 p-4">
-                <Send className="size-12" />
-                <h2 className="text-4xl ml-5 text-indigo-500 font-bold text-center">Contáctame</h2>
-            </div>
-            
-            <form ref={formRef} onSubmit={sendEmail} className="mx-auto p-4">
-                <div className="flex flex-col md:flex-row md:justify-center">
-                    <div className="flex flex-col justify-center mb-4 md:w-1/2 md:pr-2">
-                        <label htmlFor="name" className="my-6 skills-contact">Nombre</label>
-                        <input
-                            type="text"
-                            id="name"
-                            value={name}
-                            onChange={(e) => setName(e.target.value)}
-                            className="w-full px-4 py-2 pr-10 text-md border-b-2 border-gray-300 focus:outline-none focus:border-indigo-500 transition duration-200 ease-in-out contact-color-input"
-                            placeholder="Tu nombre"
-                            required
-                        />
-                        <label htmlFor="email" className="my-6 skills-contact">Correo Electrónico</label>
-                        <input
-                            type="email"
-                            id="email"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                            className="w-full px-4 py-2 pr-10 text-md border-b-2 border-gray-300 focus:outline-none focus:border-indigo-500 transition duration-200 ease-in-out contact-color-input my-2"
-                            placeholder="Tu correo"
-                            required
-                        />
-                        <label htmlFor="message" className="my-6 skills-contact">Mensaje</label>
-                        <textarea
-                            id="message"
-                            value={message}
-                            onChange={(e) => setMessage(e.target.value)}
-                            className="w-full px-4 py-2 pr-10 text-md border-b-2 my-2 border-gray-300 focus:outline-none focus:border-indigo-500 transition duration-200 ease-in-out contact-color-input"
-                            placeholder="Tu mensaje"
-                            required
-                        ></textarea>
-                    </div>
-                </div>
-                {error && <p className="text-red-500">{error}</p>}
-                <div className="flex justify-center">
-                    <button
-                        type="submit"
-                        className="bg-indigo-600 p-3 rounded-lg flex justify-center font-bold hover:bg-indigo-500 transition-colors"
-                    >
-                        Enviar Mensaje
-                    </button>
-                </div>
-            </form>
+        <section id="contact" className="py-20 relative">
+      <div className="container mx-auto px-4 max-w-4xl">
+        <div className="text-center mb-12">
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <Send className="h-8 w-8 text-sky-400" />
+            <h2 className="text-4xl font-bold text-white">Contáctame</h2>
+          </div>
+          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+            ¿Tienes un proyecto en mente? Me encantaría escuchar sobre él y ver cómo puedo ayudarte.
+          </p>
         </div>
+
+
+        <div className="max-w-2xl mx-auto bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700">
+          <div className="mb-6">
+            <h3 className="text-xl font-semibold text-white mb-2">Envíame un mensaje</h3>
+            <p className="text-gray-400">Completa el formulario y te responderé lo antes posible.</p>
+          </div>
+
+          <form ref={formRef} onSubmit={sendEmail} className="space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="space-y-2">
+                <label htmlFor="name" className="flex items-center gap-2 text-sm font-medium text-gray-300">
+                  <User className="h-4 w-4" />
+                  Nombre
+                </label>
+                <input
+                  id="name"
+                  type="text"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  placeholder="Tu nombre"
+                  className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-sky-400 focus:border-transparent transition-all"
+                  required
+                />
+              </div>
+              <div className="space-y-2">
+                <label htmlFor="email" className="flex items-center gap-2 text-sm font-medium text-gray-300">
+                  <Mail className="h-4 w-4" />
+                  Email
+                </label>
+                <input
+                  id="email"
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="tu@email.com"
+                  className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-sky-400 focus:border-transparent transition-all"
+                  required
+                />
+              </div>
+            </div>
+            <div className="space-y-2">
+              <label htmlFor="message" className="flex items-center gap-2 text-sm font-medium text-gray-300">
+                <MessageSquare className="h-4 w-4" />
+                Mensaje
+              </label>
+              <textarea
+                id="message"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                placeholder="Cuéntame sobre tu proyecto..."
+                className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-sky-400 focus:border-transparent transition-all min-h-[120px] resize-vertical"
+                required
+              />
+            </div>
+            {error && <p className="text-red-500">{error}</p>}
+            <button
+              type="submit"
+              className="w-full bg-sky-600 hover:bg-sky-700 disabled:bg-sky-800 disabled:cursor-not-allowed text-white font-medium py-3 px-6 rounded-lg transition-colors flex items-center justify-center gap-2"
+            >
+                <Send className="h-4 w-4" />
+                Enviar Mensaje
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
     );
 }

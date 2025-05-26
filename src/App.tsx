@@ -14,10 +14,10 @@ const App: React.FC = () => {
   return (
     <>
       <ToastContainer />
-      <div className="relative min-h-screen overflow-auto">
+      <div className="min-h-screen relative">
         <GalaxyBackground />
-        <Navbar/>
-        <div className="center-column relative z-1 text-white w-full">
+        <div className="relative z-10">
+          <Navbar/>
           <section id="home" className="w-full">
             <Header/>
           </section>

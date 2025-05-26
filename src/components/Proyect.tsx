@@ -1,21 +1,40 @@
-import ProjectCard from "./projectCard/ProjectCard";
-import { projects } from "../data/projects";
-import { ClipboardList } from "lucide-react";
+import { FolderOpen } from "lucide-react"
+import ScrollAos from "./ScrollAos"
+import { projects } from "../data/projects"
+import ProjectCard from "./projectCard/ProjectCard"
 
 
-export default function Proyect() {
+export default function ProjectsSection() {
+  return (
+    <section id="projects" className="py-20 relative">
+      {/* Glass background overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-transparent to-blue-900/20" />
 
-    return (
-        <div className="my-12 scroll-m-5 w-full mx-auto lg:max-w-4xl md:max-w-2xl ">
-            <div className="flex justify-start items-center mb-8 md:pl-0 pl-6">
-                <ClipboardList className="size-14 "/>
-                <h2 className="text-4xl font-bold text-indigo-500 ml-4">Proyectos</h2>
+      <div className="container mx-auto px-4 max-w-6xl relative z-10">
+        <ScrollAos>
+          <div className="text-center mb-12">
+            {/* Glass header container */}
+            <div className="bg-white/5 backdrop-blur-xl rounded-3xl p-8 border border-white/10 max-w-3xl mx-auto">
+              <div className="flex items-center justify-center gap-3 mb-4">
+                <div className="p-3 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20">
+                  <FolderOpen className="h-8 w-8 text-sky-400" />
+                </div>
+                <h2 className="text-4xl font-bold text-white">Proyectos</h2>
+              </div>
+              <p className="text-white/80 text-lg max-w-2xl mx-auto leading-relaxed">
+                Una selección de proyectos que demuestran mis habilidades y experiencia en desarrollo web.
+              </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-16 mt-6 max-sm:text-center">
-                {projects.map((project, index) => (
-                    <ProjectCard key={index} {...project} />
-                ))}
-            </div>
+          </div>
+        </ScrollAos>
+
+        {/* Projects grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((project, index) => (
+            <ProjectCard key={index} {...project} />
+          ))}
         </div>
-    );
+      </div>
+    </section>
+  )
 }

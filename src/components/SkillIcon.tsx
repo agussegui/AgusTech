@@ -1,86 +1,62 @@
-import { Settings } from "lucide-react";
-import FadeInSection from "./ScrollAos";
 
-export default function SkillIcon() {
-    return (
-        <>
-            <FadeInSection animationType={'fade-in'}>
-                <div className="my-12 scroll-m-5 w-full mx-auto lg:max-w-4xl md:max-w-2xl ">
-                    <div className="flex justify-start items-center mb-8 p-4">
-                        <Settings className="size-12" />
-                        <h2 className="text-4xl text-indigo-500 ml-4 font-semibold">Tecnologías</h2>
-                    </div>
+import { Settings } from "lucide-react"
+import ScrollAos from "./ScrollAos"
 
-                    {/* Primera lista */}
-                    <div className="mt-4 ">
-                        <ul className="grid grid-cols-2 md:flex md:flex-wrap lg:justify-between gap-x-3 gap-y-7 sm:gap-x-6">
-                            <li className="flex flex-col items-center justify-between group transition-all duration-300">
-                                <img src="./html.svg" alt="Logo HTML" className="max-w-16 transform group-hover:rotate-6 group-hover:scale-130 transition-transform duration-300" />
-                                <span className="text-lg skills-contact font-bold mt-4 transition-colors duration-300 group-hover:text-amber-500">HTML</span>
-                            </li>
-                            <li className="flex flex-col items-center justify-between group transition-all duration-300">
-                                <img src="./css.svg" alt="Logo CSS" className="max-w-16 transform group-hover:rotate-6 group-hover:scale-130 transition-transform duration-300" />
-                                <span className="text-lg skills-contact font-bold mt-4 transition-colors duration-300 group-hover:text-amber-500">CSS</span>
-                            </li>
-                            <li className="flex flex-col items-center justify-between group transition-all duration-300">
-                                <img src="./sass.svg" alt="Logo Sass" className="max-w-16 transform group-hover:rotate-6 group-hover:scale-130 transition-transform duration-300" />
-                                <span className="text-lg skills-contact font-bold mt-4 transition-colors duration-300 group-hover:text-amber-500">Sass</span>
-                            </li>
-                            <li className="flex flex-col items-center justify-between group transition-all duration-300">
-                                <img src="./tailwind.svg" alt="Logo Tailwind" className="max-w-16 transform group-hover:rotate-6 group-hover:scale-130 transition-transform duration-300" />
-                                <span className="text-lg skills-contact font-bold mt-4 transition-colors duration-300 group-hover:text-amber-500">Tailwind</span>
-                            </li>
-                            <li className="flex flex-col items-center justify-between group transition-all duration-300">
-                                <img src="./javascript.svg" alt="Logo Javascript" className="max-w-16 transform group-hover:rotate-6 group-hover:scale-130 transition-transform duration-300" />
-                                <span className="text-lg skills-contact font-bold mt-4 transition-colors duration-300 group-hover:text-amber-500">Javascript</span>
-                            </li>
-                            <li className="flex flex-col items-center justify-between group transition-all duration-300">
-                                <img src="./react-2.svg" alt="Logo React" className="max-w-16 transform group-hover:rotate-6 group-hover:scale-130 transition-transform duration-300" />
-                                <span className="text-lg skills-contact font-bold mt-4 transition-colors duration-300 group-hover:text-amber-500">React</span>
-                            </li>
-                            <li className="flex flex-col items-center justify-between group transition-all duration-300">
-                                <img src="./nextjs-13.svg" alt="Logo Next.js" className="max-w-16 transform group-hover:rotate-6 group-hover:scale-130 transition-transform duration-300 bg-white rounded-full w-16 h-16 p-1" />
-                                <span className="text-lg skills-contact font-bold mt-4 transition-colors duration-300 group-hover:text-amber-500">Next.js</span>
-                            </li>
-                        </ul>
-                    </div>
+export default function SkillsSection() {
+  const skills = [
+    { name: "React", logo: "/react-2.svg", color: "bg-blue-500" },
+    { name: "Next.js", logo: "/next-js.svg", color: "bg-black" },
+    { name: "TypeScript", logo: "/typescript.svg", color: "bg-blue-600" },
+    { name: "Tailwind CSS", logo: "/tailwind.svg", color: "bg-cyan-500" },
+    { name: "JavaScript", logo: "/javascript.svg", color: "bg-yellow-500" },
+    { name: "HTML/CSS", logo: "/html.svg", color: "bg-orange-500" },
+    { name: "Node.js", logo: "/nodejs.svg", color: "bg-green-600" },
+    { name: "PHP", logo: "/php.svg", color: "bg-purple-600" },
+    { name: "MySQL", logo: "/mysql.svg", color: "bg-blue-700" },
+    { name: "MongoDB", logo: "/mongodb.svg", color: "bg-green-500" },
+    { name: "Git", logo: "/git.svg", color: "bg-red-500" },
+    { name: "GitHub", logo: "/github2.svg", color: "bg-gray-800" },
+    { name: "Sass", logo: "/sass.svg", color: "bg-pink-500" },
+    { name: "CSS", logo: "/css.svg", color: "bg-blue-800" },
+  ]
 
-                    {/* Segunda lista */}
-                    <div className="mt-8">
-                        <ul className="grid grid-cols-2 md:flex md:flex-wrap lg:justify-between gap-x-3 gap-y-7 sm:gap-x-6">
-                            <li className="flex flex-col items-center justify-between group transition-all duration-300">
-                                <img src="./nodejs.svg" alt="Logo Node js" className="max-w-16 transform group-hover:rotate-6 group-hover:scale-130 transition-transform duration-300" />
-                                <span className="text-lg skills-contact font-bold mt-4 transition-colors duration-300 group-hover:text-amber-500">Node.js</span>
-                            </li>
-                            <li className="flex flex-col items-center justify-between group transition-all duration-300">
-                                <img src="./typescript.svg" alt="Logo Node js" className="max-w-16 transform group-hover:rotate-6 group-hover:scale-130 transition-transform duration-300" />
-                                <span className="text-lg skills-contact font-bold mt-4 transition-colors duration-300 group-hover:text-amber-500">Typescript</span>
-                            </li>
-                            <li className="flex flex-col items-center justify-between group transition-all duration-300">
-                                <img src="./php.svg" alt="Logo PHP" className="max-w-16 transform group-hover:rotate-6 group-hover:scale-130 transition-transform duration-300" />
-                                <span className="text-lg skills-contact font-bold mt-4 transition-colors duration-300 group-hover:text-amber-500">PHP</span>
-                            </li>
-                            <li className="flex flex-col items-center justify-between group transition-all duration-300">
-                                <img src="./mysql.svg" alt="Logo MySQL" className="max-w-16 transform group-hover:rotate-6 group-hover:scale-130 transition-transform duration-300" />
-                                <span className="text-lg skills-contact font-bold mt-4 transition-colors duration-300 group-hover:text-amber-500">MYSQL</span>
-                            </li>
-                            <li className="flex flex-col items-center justify-between group transition-all duration-300">
-                                <img src="./mongodb.svg" alt="Logo MongoDB" className="max-w-16 transform group-hover:rotate-6 group-hover:scale-130 transition-transform duration-300" />
-                                <span className="text-lg skills-contact font-bold mt-4 transition-colors duration-300 group-hover:text-amber-500">MongoDB</span>
-                            </li>
-                            <li className="flex flex-col items-center justify-between group transition-all duration-300">
-                                <img src="./git.svg" alt="Logo Git" className="max-w-16 transform group-hover:rotate-6 group-hover:scale-130 transition-transform duration-300" />
-                                <span className="text-lg skills-contact font-bold mt-4 transition-colors duration-300 group-hover:text-amber-500">Git</span>
-                            </li>
-                            <li className="flex flex-col items-center justify-between group transition-all duration-300">
-                                <img src="./github2.svg" alt="Logo GitHub" className="max-w-16 transform group-hover:rotate-6 group-hover:scale-130 transition-transform duration-300" />
-                                <span className="text-lg skills-contact font-bold mt-4 transition-colors duration-300 group-hover:text-amber-500">GitHub</span>
-                            </li>
-                        </ul>
-                    </div>
+  return (
+    <section id="skills" className="py-20">
+      <div className="container mx-auto px-4 max-w-6xl">
+        <ScrollAos>
+          <div className="text-center mb-12">
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <Settings className="h-8 w-8 text-sky-600" />
+              <h2 className="text-4xl font-bold text-white">Tecnologías</h2>
+            </div>
+            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+              Las herramientas y tecnologías que uso para crear experiencias digitales excepcionales.
+            </p>
+          </div>
+        </ScrollAos>
+
+        <ScrollAos delay={0.2}>
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-6 justify-items-center">
+            {skills.map((skill, index) => (
+              <div
+                key={index}
+                className="flex flex-col items-center justify-center group transition-all duration-300 hover:scale-110"
+              >
+                <div className="w-16 h-16 mb-4 p-2 bg-gray-800/50 backdrop-blur-sm rounded-xl border border-gray-700 group-hover:border-sky-400/50 transition-all duration-300 flex items-center justify-center">
+                  <img
+                    src={skill.logo || "/placeholder.svg"}
+                    alt={`Logo ${skill.name}`}
+                    className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300"
+                  />
                 </div>
-            </FadeInSection>
-
-        </>
-    )
+                <span className="text-sm font-medium text-gray-300 group-hover:text-white transition-colors duration-300 text-center">
+                  {skill.name}
+                </span>
+              </div>
+            ))}
+          </div>
+        </ScrollAos>
+      </div>
+    </section>
+  )
 }

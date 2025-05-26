@@ -21,7 +21,7 @@ export default function IconsGit() {
       <motion.a
         href="https://github.com/agussegui"
         rel="noopener noreferrer"
-        className="flex items-center bg-indigo-600 text-white rounded-full overflow-hidden p-2 w-14 h-14 font-bold"
+        className="flex items-center bg-sky-600 text-white rounded-full overflow-hidden p-2 w-14 h-14 font-bold"
         variants={containerVariants}
         initial="hidden"
         whileHover="visible"
@@ -41,7 +41,7 @@ export default function IconsGit() {
         href="https://www.linkedin.com/in/agustin-segui/" 
         target="_blank"
         rel="noopener noreferrer"
-        className=" flex items-center bg-indigo-600 text-white rounded-full overflow-hidden p-2 w-14 h-14 font-bold"
+        className=" flex items-center bg-sky-600 text-white rounded-full overflow-hidden p-2 w-14 h-14 font-bold"
         variants={containerVariants}
         initial="hidden"
         whileHover="visible"
@@ -58,7 +58,7 @@ export default function IconsGit() {
         href="mailto:agussegui24@hotmail.es" 
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center bg-indigo-600 text-white rounded-full overflow-hidden p-2 w-14 h-14 font-bold"
+        className="flex items-center bg-sky-600 text-white rounded-full overflow-hidden p-2 w-14 h-14 font-bold"
         variants={containerVariants}
         initial="hidden"
         whileHover="visible"
