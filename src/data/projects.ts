@@ -101,5 +101,17 @@ export const projects: Project[] = [
     githubLink: "https://github.com/agussegui/Ecommerce-Store",
     demoLink: "https://expense-planner-one.vercel.app/",
   },
-  
+   {
+    title: "Lavadero de Autos",
+    image: "../sunshinecars.png",
+    subtitle: "Planifica tus Lavados | Sunshine Cars",
+    technologies: [
+      { name: "TypeScript", logo: "./typescript.svg", bgColor: "bg-blue-950" },
+      { name: "CSS", logo: "./css.svg", bgColor: "bg-blue-800" },
+      { name: "React", logo: "./react-2.svg", bgColor: "bg-blue-950" },
+      
+    ],
+    githubLink: "https://sunshinecars.com.ar/",
+    demoLink: "https://sunshinecars.com.ar/",
+  },
 ];
